@@ -9,13 +9,10 @@ function [all_theta] = oneVsAll(X, y, num_labels, lambda)
 
 % Some useful variables
 m = size(X, 1);
-m
 n = size(X, 2);
-n
 
 % You need to return the following variables correctly 
 all_theta = zeros(num_labels, n + 1);
-size(all_theta)
 
 % Add ones to the X data matrix
 X = [ones(m, 1) X];
