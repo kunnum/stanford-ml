@@ -21,14 +21,21 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% fprintf("size of X is %d x %d\n", size(X))
+% fprintf("size of Theta1 is %d x %d\n", size(Theta1))
+% fprintf("size of Theta2 is %d x %d\n", size(Theta2))
 
+l2_i = [ones(m, 1) X];
+l2_o = sigmoid(l2_i * Theta1');;
 
+% fprintf("size of l2_o is %d x %d\n", size(l2_o))
 
+l3_i = [ones(m, 1) l2_o];
+l3_o = sigmoid(l3_i * Theta2');
 
+% fprintf("size of l3_o is %d x %d\n", size(l3_o))
 
-
-
-
+[val, p] =  max(l3_o, [], 2);
 % =========================================================================
 
 
